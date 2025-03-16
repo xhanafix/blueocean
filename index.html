@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="light-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Ocean Sales Script Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Add Tippy.js for tooltips -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top-controls">
+                <div class="language-selector">
+                    <select id="language-select" data-tippy-content="Choose your preferred language">
+                        <option value="en">English</option>
+                        <option value="ms">Bahasa Malaysia</option>
+                    </select>
+                </div>
+                <div class="theme-toggle">
+                    <label class="switch" data-tippy-content="Toggle between light and dark theme">
+                        <input type="checkbox" id="theme-switch">
+                        <span class="slider round">
+                            <i class="fas fa-sun light-icon"></i>
+                            <i class="fas fa-moon dark-icon"></i>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <h1>Blue Ocean Sales Script Generator</h1>
+            <p id="header-subtitle">Generate compelling sales scripts using the Blue Ocean Strategy technique</p>
+        </header>
+
+        <main>
+            <section class="api-key-section">
+                <h2 id="api-section-title">API Configuration</h2>
+                <div class="input-group">
+                    <label for="api-key" id="api-key-label">OpenRouter API Key:</label>
+                    <div class="api-key-container">
+                        <input type="password" id="api-key" placeholder="Enter your OpenRouter API key" 
+                               data-tippy-content="Get your API key from openrouter.ai">
+                        <button id="toggle-api-key" class="icon-button" data-tippy-content="Toggle visibility">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <button id="save-api-key" class="button" data-tippy-content="Save your API key for future use">Save API Key</button>
+                </div>
+                <div id="api-key-status" class="status-message"></div>
+            </section>
+
+            <section class="product-description-section">
+                <h2 id="product-section-title">Product/Service Description</h2>
+                <textarea id="product-description" placeholder="Describe your product or service in detail..." 
+                          data-tippy-content="Provide detailed information about your product or service including features, benefits, target audience, and what makes it unique"></textarea>
+            </section>
+
+            <section class="format-options">
+                <h3 id="format-options-title">Output Format Options</h3>
+                <div class="format-controls">
+                    <div class="format-option">
+                        <input type="checkbox" id="use-headings" checked data-tippy-content="Include section headings in the output">
+                        <label for="use-headings" id="headings-label">Use Headings</label>
+                    </div>
+                    <div class="format-option">
+                        <input type="checkbox" id="use-bullet-points" checked data-tippy-content="Format key points as bullet lists">
+                        <label for="use-bullet-points" id="bullet-points-label">Use Bullet Points</label>
+                    </div>
+                    <div class="format-option">
+                        <input type="checkbox" id="use-bold-emphasis" checked data-tippy-content="Emphasize important points with bold text">
+                        <label for="use-bold-emphasis" id="bold-emphasis-label">Bold Emphasis</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="generate-section">
+                <button id="generate-button" class="button primary" data-tippy-content="Generate your sales script based on the description">
+                    <span id="generate-button-text">Generate Sales Script</span>
+                    <div class="spinner hidden"></div>
+                </button>
+            </section>
+
+            <section class="result-section hidden" id="result-section">
+                <h2 id="result-section-title">Your Blue Ocean Sales Script</h2>
+                <div class="result-actions">
+                    <button id="copy-button" class="button" data-tippy-content="Copy the entire script to your clipboard">
+                        <i class="fas fa-copy"></i> <span id="copy-button-text">Copy to Clipboard</span>
+                    </button>
+                    <button id="edit-button" class="button" data-tippy-content="Edit the generated script">
+                        <i class="fas fa-edit"></i> <span id="edit-button-text">Edit</span>
+                    </button>
+                    <button id="toggle-markdown-button" class="button" data-tippy-content="Toggle between raw markdown and formatted view">
+                        <i class="fas fa-code"></i> <span id="toggle-markdown-text">Show Raw Markdown</span>
+                    </button>
+                </div>
+                <div id="sales-script-container" class="sales-script-container">
+                    <div id="sales-script-content" class="sales-script-content markdown-content"></div>
+                    <textarea id="sales-script-editor" class="hidden"></textarea>
+                </div>
+                <div class="edit-actions hidden" id="edit-actions">
+                    <button id="save-edit-button" class="button primary" data-tippy-content="Save your changes"><span id="save-edit-text">Save Changes</span></button>
+                    <button id="cancel-edit-button" class="button" data-tippy-content="Discard your changes"><span id="cancel-edit-text">Cancel</span></button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p id="footer-text">Powered by OpenRouter API with Google/LearnLM-1.5-Pro-Experimental model</p>
+            <p class="copyright">© <a href="https://hanafihassan.com" target="_blank">hanafihassan.com</a> 2025. All rights reserved. <a href="https://github.com/xhanafix" target="_blank"><i class="fab fa-github"></i></a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

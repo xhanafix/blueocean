@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_KEY_STORAGE_KEY = 'openrouter_api_key';
     const LANGUAGE_STORAGE_KEY = 'selected_language';
     const THEME_STORAGE_KEY = 'preferred_theme';
-    const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-    const MODEL = 'google/learnlm-1.5-pro-experimental:free';
+    const OPENROUTER_API_URL = 'https://generativelanguage.googleapis.com';
+    const MODEL = 'gemini-2.5-flash';
 
     // State variables
     let isMarkdownView = true;
